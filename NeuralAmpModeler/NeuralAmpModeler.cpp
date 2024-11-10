@@ -286,7 +286,7 @@ dsp::wav::LoadReturnCode NeuralAmpModeler::_StageIRStream()
   dsp::wav::LoadReturnCode wavState = dsp::wav::LoadReturnCode::ERROR_OTHER;
   try
   {
-    mStagedIR = std::make_unique<dsp::ImpulseResponse>(IRData, sampleRate, sampleRate);
+    mStagedIR = std::make_unique<dsp::ImpulseResponse>(IRData, sizeof(IRData), sampleRate);
     wavState = mStagedIR->GetWavState();
   }
   catch (std::runtime_error& e)
