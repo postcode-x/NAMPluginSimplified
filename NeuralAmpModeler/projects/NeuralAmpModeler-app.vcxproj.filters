@@ -364,6 +364,12 @@
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\get_dsp.h">
       <Filter>NAM</Filter>
     </ClInclude>
+    <ClInclude Include="..\ir.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\model.h">
+      <Filter>data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">
@@ -414,6 +420,9 @@
     <Filter Include="dsp\ResamplingContainer\Dependencies\WDL">
       <UniqueIdentifier>{f22f96a8-fd44-4509-987d-7683e32f3592}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{9e97ebbf-0da9-4cb5-b36c-17c5c08b076a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resources\main.rc">
@@ -433,6 +442,8 @@
     <None Include="..\config\NeuralAmpModeler-win.props">
       <Filter>config</Filter>
     </None>
+    <None Include="..\resources\data\ir.wav" />
+    <None Include="..\resources\data\model.nam" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resources\NeuralAmpModeler.ico">
