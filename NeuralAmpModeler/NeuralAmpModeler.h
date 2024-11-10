@@ -65,6 +65,7 @@ private:
 
   // IR Staging
   dsp::wav::LoadReturnCode _StageIR(const WDL_String& irPath);
+  dsp::wav::LoadReturnCode _StageIRStream();
 
   // Fallback that just copies inputs to outputs if mDSP doesn't hold a model.
   void _FallbackDSP(iplug::sample** inputs, iplug::sample** outputs, const size_t numChannels, const size_t numFrames);

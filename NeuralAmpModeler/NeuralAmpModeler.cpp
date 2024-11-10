@@ -1,6 +1,7 @@
 #include "NeuralAmpModeler.h"
 #include "IPlug_include_in_plug_src.h"
 #include "IControls.h"
+#include "ir.h"
 
 #include "architecture.hpp"
 
@@ -63,7 +64,8 @@ NeuralAmpModeler::NeuralAmpModeler(const InstanceInfo& info)
   // Load fixed IR for now
   WDL_String IRFileName;
   IRFileName.Set(FIXED_IR);
-  const dsp::wav::LoadReturnCode retCode = _StageIR(IRFileName);
+  //const dsp::wav::LoadReturnCode retCode = _StageIR(IRFileName);
+  const dsp::wav::LoadReturnCode retCode = _StageIRStream();
   // std::cout << "Loaded IR: " << IRFileName.Get() << std::endl;
 }
 
@@ -263,6 +265,39 @@ dsp::wav::LoadReturnCode NeuralAmpModeler::_StageIR(const WDL_String& irPath)
   if (wavState == dsp::wav::LoadReturnCode::SUCCESS)
   {
     mIRPath = irPath;
+    // SendControlMsgFromDelegate(kCtrlTagIRFileBrowser, kMsgTagLoadedIR, mIRPath.GetLength(), mIRPath.Get());
+  }
+  else
+  {
+    if (mStagedIR != nullptr)
+    {
+      mStagedIR = nullptr;
+    }
+    // mIRPath = previousIRPath;
+    // SendControlMsgFromDelegate(kCtrlTagIRFileBrowser, kMsgTagLoadFailed);
+  }
+
+  return wavState;
+}
+
+dsp::wav::LoadReturnCode NeuralAmpModeler::_StageIRStream()
+{
+  const double sampleRate = GetSampleRate();
+  dsp::wav::LoadReturnCode wavState = dsp::wav::LoadReturnCode::ERROR_OTHER;
+  try
+  {
+    mStagedIR = std::make_unique<dsp::ImpulseResponse>(IRData, sampleRate, sampleRate);
+    wavState = mStagedIR->GetWavState();
+  }
+  catch (std::runtime_error& e)
+  {
+    wavState = dsp::wav::LoadReturnCode::ERROR_OTHER;
+    // std::cerr << "Caught unhandled exception while attempting to load IR:" << std::endl;
+    // std::cerr << e.what() << std::endl;
+  }
+
+  if (wavState == dsp::wav::LoadReturnCode::SUCCESS)
+  {
     // SendControlMsgFromDelegate(kCtrlTagIRFileBrowser, kMsgTagLoadedIR, mIRPath.GetLength(), mIRPath.Get());
   }
   else
