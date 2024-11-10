@@ -332,6 +332,8 @@
     <ClInclude Include="..\AudioDSPTools\dsp\version.h" />
     <ClInclude Include="..\AudioDSPTools\dsp\wav.h" />
     <ClInclude Include="..\Colors.h" />
+    <ClInclude Include="..\ir.h" />
+    <ClInclude Include="..\model.h" />
     <ClInclude Include="..\NeuralAmpModeler.h" />
     <ClInclude Include="..\NeuralAmpModelerControls.h" />
     <ClInclude Include="..\NeuralAmpModelerCore\NAM\activations.h" />
@@ -413,14 +415,14 @@
   <ItemGroup>
     <Image Include="..\resources\NeuralAmpModeler.ico" />
   </ItemGroup>
-    <ItemGroup>
-	    <None Include="..\resources\data\ir.wav">
-		    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    </None>
-	    <None Include="..\resources\data\model.nam">
-		    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    </None>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\resources\data\ir.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\resources\data\model.nam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Include="..\config\NeuralAmpModeler-ios.xcconfig" />
     <None Include="..\config\NeuralAmpModeler-web.mk" />
