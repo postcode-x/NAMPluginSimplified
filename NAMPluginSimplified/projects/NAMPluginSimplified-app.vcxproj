@@ -163,7 +163,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>$(APP_DEFS);$(DEBUG_DEFS);$(EXTRA_DEBUG_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(APP_INC_PATHS);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(APP_INC_PATHS);$(IPLUG2_ROOT)\..\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -203,7 +203,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>$(APP_DEFS);$(RELEASE_DEFS);$(EXTRA_RELEASE_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(APP_INC_PATHS);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(APP_INC_PATHS);$(IPLUG2_ROOT)\..\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
@@ -244,7 +244,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>$(APP_DEFS);$(TRACER_DEFS);$(EXTRA_TRACER_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(APP_INC_PATHS);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(APP_INC_PATHS);$(IPLUG2_ROOT)\..\eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -317,7 +317,31 @@
     <ClInclude Include="..\..\iPlug2\IPlug\IPlug_include_in_plug_hdr.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\IPlug_include_in_plug_src.h" />
     <ClInclude Include="..\..\iPlug2\IPlug\ISender.h" />
+    <ClInclude Include="..\architecture.hpp" />
+    <ClInclude Include="..\AudioDSPTools\dsp\dspx.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ImpulseResponse.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\NoiseGate.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\Resample.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\LanczosResampler.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\heapbuf.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\ptrlist.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\wdltypes.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\ResamplingContainer.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\version.h" />
+    <ClInclude Include="..\AudioDSPTools\dsp\wav.h" />
+    <ClInclude Include="..\ir.h" />
+    <ClInclude Include="..\model.h" />
     <ClInclude Include="..\NAMPluginSimplified.h" />
+    <ClInclude Include="..\NAM\activations.h" />
+    <ClInclude Include="..\NAM\convnet.h" />
+    <ClInclude Include="..\NAM\Dependencies\nlohmann\json.hpp" />
+    <ClInclude Include="..\NAM\dsp.h" />
+    <ClInclude Include="..\NAM\get_dsp.h" />
+    <ClInclude Include="..\NAM\lstm.h" />
+    <ClInclude Include="..\NAM\util.h" />
+    <ClInclude Include="..\NAM\version.h" />
+    <ClInclude Include="..\NAM\wavenet.h" />
     <ClInclude Include="..\resources\resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -360,13 +384,33 @@
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugPluginBase.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugProcessor.cpp" />
     <ClCompile Include="..\..\iPlug2\IPlug\IPlugTimer.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\dspx.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\ImpulseResponse.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\NoiseGate.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.cpp" />
+    <ClCompile Include="..\AudioDSPTools\dsp\wav.cpp" />
     <ClCompile Include="..\NAMPluginSimplified.cpp" />
+    <ClCompile Include="..\NAM\activations.cpp" />
+    <ClCompile Include="..\NAM\convnet.cpp" />
+    <ClCompile Include="..\NAM\dsp.cpp" />
+    <ClCompile Include="..\NAM\get_dsp.cpp" />
+    <ClCompile Include="..\NAM\lstm.cpp" />
+    <ClCompile Include="..\NAM\util.cpp" />
+    <ClCompile Include="..\NAM\wavenet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resources\main.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resources\NAMPluginSimplified.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\resources\data\ir.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\resources\data\model.nam">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\config\NAMPluginSimplified-ios.xcconfig" />
