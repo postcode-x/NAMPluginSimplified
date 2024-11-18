@@ -3,4 +3,4 @@ This project aims to simplify the existing [NAM plugin](https://github.com/sdatk
 
 The main focus is initially on reducing complexity and ensuring compatibility with the target hardware, so once the initial simplification is complete, the next phase will involve porting the codebase directly to the Daisy Seed platform.
 
-![alt text](https://github.com/postcode-x/NAMPluginSimplified/blob/main/NamPluginSimplified/screenshot.png)
+![alt text](https://github.com/postcode-x/NAMPluginSimplified/blob/main/NAMPluginSimplified/screenshot.png)
