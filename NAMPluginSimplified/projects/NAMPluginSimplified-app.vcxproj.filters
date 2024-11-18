@@ -77,6 +77,42 @@
     <ClCompile Include="..\..\iPlug2\IGraphics\Drawing\IGraphicsSkia.cpp">
       <Filter>IGraphics\Drawing</Filter>
     </ClCompile>
+    <ClCompile Include="..\AudioDSPTools\dsp\dspx.cpp">
+      <Filter>dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioDSPTools\dsp\ImpulseResponse.cpp">
+      <Filter>dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioDSPTools\dsp\NoiseGate.cpp">
+      <Filter>dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.cpp">
+      <Filter>dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AudioDSPTools\dsp\wav.cpp">
+      <Filter>dsp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\activations.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\convnet.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\dsp.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\get_dsp.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\lstm.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\util.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NAM\wavenet.cpp">
+      <Filter>NAM</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\NAMPluginSimplified.h" />
@@ -258,6 +294,76 @@
     <ClInclude Include="..\..\iPlug2\IPlug\ISender.h">
       <Filter>IPlug</Filter>
     </ClInclude>
+    <ClInclude Include="..\architecture.hpp" />
+    <ClInclude Include="..\ir.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\model.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\dspx.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ImpulseResponse.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\NoiseGate.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\RecursiveLinearFilter.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\Resample.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\version.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\wav.h">
+      <Filter>dsp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\ResamplingContainer.h">
+      <Filter>dsp\ResamplingContainer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\LanczosResampler.h">
+      <Filter>dsp\ResamplingContainer\Dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\heapbuf.h">
+      <Filter>dsp\ResamplingContainer\Dependencies\WDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\ptrlist.h">
+      <Filter>dsp\ResamplingContainer\Dependencies\WDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AudioDSPTools\dsp\ResamplingContainer\Dependencies\WDL\wdltypes.h">
+      <Filter>dsp\ResamplingContainer\Dependencies\WDL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\activations.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\convnet.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\dsp.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\get_dsp.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\lstm.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\util.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\version.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\wavenet.h">
+      <Filter>NAM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NAM\Dependencies\nlohmann\json.hpp">
+      <Filter>NAM\Dependencies\nlohmann</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="resources">
@@ -290,6 +396,30 @@
     <Filter Include="IPlug\APP\RTAudioMidi\include">
       <UniqueIdentifier>{649c5de3-b4c2-4de9-8d57-3b1762646259}</UniqueIdentifier>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{3ce8ad55-66b8-43a0-987a-6f92b24a2acd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dsp">
+      <UniqueIdentifier>{020e78a2-fd8b-4dd1-a8ed-1fef5c54792a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NAM">
+      <UniqueIdentifier>{f56a0aa4-5817-404c-8d11-72e4315a4259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dsp\ResamplingContainer">
+      <UniqueIdentifier>{acff8d88-bf4c-4bb8-a5e2-b73bd3ddecba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dsp\ResamplingContainer\Dependencies">
+      <UniqueIdentifier>{f932c98f-d450-487b-8146-038cb9459b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dsp\ResamplingContainer\Dependencies\WDL">
+      <UniqueIdentifier>{ac6f1b1b-523a-4184-9d74-929c1837272a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NAM\Dependencies">
+      <UniqueIdentifier>{09ba78a6-2bf1-4c9a-9c12-246ce75ac869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NAM\Dependencies\nlohmann">
+      <UniqueIdentifier>{3fb6ef3e-68cb-4942-81dc-1b7c1a0ddfce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resources\main.rc">
@@ -309,6 +439,8 @@
     <None Include="..\config\NAMPluginSimplified-win.props">
       <Filter>config</Filter>
     </None>
+    <None Include="..\resources\data\ir.wav" />
+    <None Include="..\resources\data\model.nam" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\resources\NAMPluginSimplified.ico">
